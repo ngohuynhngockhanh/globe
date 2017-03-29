@@ -1,0 +1,9 @@
+/coverage
+*.orig
+*.project
+.htaccess
+*.swp
+*.tar.gz
+/node_modules
+/dist
+/gh-pages

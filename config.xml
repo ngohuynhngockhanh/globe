@@ -17,6 +17,10 @@
   <preference name="android-minSdkVersion" value="16"/>
   <preference name="BackupWebStorage" value="none"/>
   <feature name="StatusBar">
-    <param name="ios-package" value="CDVStatusBar" onload="true"/>
+    <param name="ios-package" onload="true" value="CDVStatusBar"/>
   </feature>
+  <plugin name="org.apache.cordova.speech.speechrecognition" spec="https://github.com/ngohuynhngockhanh/SpeechRecognitionPlugin"/>
+  <plugin name="cordova-plugin-geolocation" spec="~2.4.2"/>
+  <allow-navigation href="http://192.168.1.60:8100"/>
+  <allow-navigation href="http://192.168.200.46:8100"/>
 </widget>

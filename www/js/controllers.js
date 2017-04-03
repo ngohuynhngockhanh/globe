@@ -1,6 +1,14 @@
 angular.module('starter.controllers', [])
-
-.controller('MapCtrl', function($scope, $ionicLoading, $rootScope, $timeout, mySocket, $ionicModal, City) {
+.controller('CityCtrl', function($scope, $rootScope, $timeout, mySocket, $ionicModal, City, $state, $stateParams) {
+  console.log("init")
+  console.log($stateParams)
+  $scope.$on('$ionicView.beforeEnter', function() {
+    console.log("enter")
+    console.log($stateParams)
+    $scope.city = $stateParams.city
+  })
+})
+.controller('MapCtrl', function($scope, $ionicLoading, $rootScope, $timeout, mySocket, $ionicModal, City, $state) {
   $scope.mapCreated = function(map) {
     $scope.map = map;
   };
@@ -19,9 +27,11 @@ angular.module('starter.controllers', [])
         }, 300);
         alert(text)
       */
+      //$rootScope.recognition.stop()
       $rootScope.recognition.start()
+      
     } else {
-      $scope.searchBox = "Tuy Hòa"
+      $scope.searchBox = "Hà Nội"
       $timeout(function() {
         submitGoogle();
         $scope.createInfoTable($scope.searchBox)
@@ -39,23 +49,15 @@ angular.module('starter.controllers', [])
   })
   $scope.modal = undefined
   $scope.createInfoTable = function(name) {
+    if ($scope.modal) {
+      $scope.modal.remove();
+    }
     var city = City.search(name)
+
     if (!city) {
       return console.log("error not found city")
     }
-    var new_scope = $rootScope.$new()
-    new_scope.city = city
-    $ionicModal.fromTemplateUrl('templates/map.html', {
-      scope: new_scope,
-      animation: 'slide-in-up'
-    }).then(function(modal) {
-      if ($scope.modal) {
-        $scope.modal.remove();
-      }
-      $scope.modal = modal;
-      $scope.modal.show();
-    });
-    
+    $state.go("city", {city: city})
   }
   
 
@@ -67,10 +69,14 @@ angular.module('starter.controllers', [])
   $rootScope.$on("moveToPos", function(e, pos) {
     console.log("listen to pos", pos)
     var json = pos 
-    mySocket.emit("SPEED", {
+    json.speed = 37
+    /*mySocket.emit("SPEED", {
       "speed": 35
-    })
-    mySocket.emit("MOVE", json)
+    })*/
+    $timeout(function() {
+      mySocket.emit("MOVE", json)  
+    }, 200)
+    
   })
   $scope.centerOnMe = function () {
     console.log("Centering");

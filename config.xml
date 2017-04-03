@@ -23,4 +23,5 @@
   <plugin name="cordova-plugin-geolocation" spec="~2.4.2"/>
   <allow-navigation href="http://192.168.1.60:8100"/>
   <allow-navigation href="http://192.168.200.46:8100"/>
+  <allow-navigation href="http://172.29.192.61:8100"/>
 </widget>

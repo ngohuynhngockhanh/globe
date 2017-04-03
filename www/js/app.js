@@ -1,4 +1,5 @@
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives','btford.socket-io'])
+
 .factory('mySocket', function (socketFactory) {
 	var myIoSocket = io.connect('http://ourshark.co:8087/webapp');	//Tên namespace webapp
 
@@ -49,4 +50,39 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives',
     }
   });
 })
- 
+.config(function($stateProvider, $urlRouterProvider) {
+
+    // Ionic uses AngularUI Router which uses the concept of states
+    // Learn more here: https://github.com/angular-ui/ui-router
+    // Set up the various states which the app can be in.
+    // Each state's controller can be found in controllers.js
+    $stateProvider
+
+        // setup an abstract state for the tabs directive
+        .state('map', {
+            url: '/map',
+            views: {
+                'view': {
+                    templateUrl: 'templates/maps.html',
+                    controller: "MapCtrl"
+                }
+            }
+        })
+        .state('city', {
+            url: '/city',
+            views: {
+                'view': {
+                    templateUrl: 'templates/info.html',
+                    controller: "CityCtrl"
+                }
+            },
+            params: {
+                'city': null
+            },
+        })
+
+
+    // if none of the above states are matched, use this as the fallback
+    $urlRouterProvider.otherwise('/map');
+
+})

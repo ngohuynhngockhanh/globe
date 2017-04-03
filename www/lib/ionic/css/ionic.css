@@ -2511,7 +2511,7 @@ a.subdued {
       color: #fff; }
   .bar.bar-calm {
     border-color: #1aacc3;
-    background-color: #43cee6;
+    background-color: #000080;
     background-image: linear-gradient(0deg, #1aacc3, #1aacc3 50%, transparent 50%);
     color: #fff; }
     .bar.bar-calm .title {
@@ -2674,7 +2674,7 @@ a.subdued {
 
 .bar-calm .button {
   border-color: #1aacc3;
-  background-color: #43cee6;
+  background-color: #000080;
   color: #fff; }
   .bar-calm .button:hover {
     color: #fff;
@@ -2901,12 +2901,12 @@ a.subdued {
 
 .tabs-calm > .tabs, .tabs.tabs-calm {
   border-color: #1aacc3;
-  background-color: #43cee6;
+  background-color: #000080;
   background-image: linear-gradient(0deg, #1aacc3, #1aacc3 50%, transparent 50%);
   color: #fff; }
   .tabs-calm > .tabs .tab-item .badge, .tabs.tabs-calm .tab-item .badge {
     background-color: #fff;
-    color: #43cee6; }
+    color: #000080; }
 
 .tabs-assertive > .tabs, .tabs.tabs-assertive {
   border-color: #cc2311;
@@ -3038,7 +3038,7 @@ a.subdued {
   .tab-item.tab-item-active.tab-item-positive {
     color: #4a87ee; }
   .tab-item.tab-item-active.tab-item-calm {
-    color: #43cee6; }
+    color: #000080; }
   .tab-item.tab-item-active.tab-item-assertive {
     color: #ef4e3a; }
   .tab-item.tab-item-active.tab-item-balanced {
@@ -3346,7 +3346,7 @@ a.subdued {
     color: #fff; }
   .item.item-calm {
     border-color: #1aacc3;
-    background-color: #43cee6;
+    background-color: #000080;
     color: #fff; }
   .item.item-assertive {
     border-color: #cc2311;
@@ -3930,7 +3930,7 @@ a.item-icon-right:after, button.item-icon-right:after, a.item-button-right:after
   background-color: #4a87ee;
   color: #fff; }
 .tabs .tab-item .badge.badge-calm, .badge.badge-calm {
-  background-color: #43cee6;
+  background-color: #000080;
   color: #fff; }
 .tabs .tab-item .badge.badge-assertive, .badge.badge-assertive {
   background-color: #ef4e3a;
@@ -4291,9 +4291,9 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
   .checkbox.checkbox-positive input:checked:before {
     background: #4a87ee; }
   .checkbox.checkbox-calm input:before {
-    border: 1px solid #43cee6; }
+    border: 1px solid #000080; }
   .checkbox.checkbox-calm input:checked:before {
-    background: #43cee6; }
+    background: #000080; }
   .checkbox.checkbox-assertive input:before {
     border: 1px solid #ef4e3a; }
   .checkbox.checkbox-assertive input:checked:before {
@@ -4419,8 +4419,8 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
     border-color: #4a87ee;
     background-color: #4a87ee; }
   .toggle.toggle-calm input:checked + .track {
-    border-color: #43cee6;
-    background-color: #43cee6; }
+    border-color: #000080;
+    background-color: #000080; }
   .toggle.toggle-assertive input:checked + .track {
     border-color: #ef4e3a;
     background-color: #ef4e3a; }
@@ -4618,7 +4618,7 @@ input[type="range"] {
   .range.range-positive input::-webkit-slider-thumb:before {
     background: #4a87ee; }
   .range.range-calm input::-webkit-slider-thumb:before {
-    background: #43cee6; }
+    background: #000080; }
   .range.range-balanced input::-webkit-slider-thumb:before {
     background: #66cc33; }
   .range.range-assertive input::-webkit-slider-thumb:before {
@@ -4818,7 +4818,7 @@ progress {
         color: #fff; }
   .button.button-calm {
     border-color: #1aacc3;
-    background-color: #43cee6;
+    background-color: #000080;
     color: #fff; }
     .button.button-calm:hover {
       color: #fff;
@@ -4831,16 +4831,16 @@ progress {
       border-color: transparent;
       background: none;
       box-shadow: none;
-      color: #43cee6; }
+      color: #000080; }
     .button.button-calm.button-icon {
       border-color: transparent;
       background: none; }
     .button.button-calm.button-outline {
-      border-color: #43cee6;
+      border-color: #000080;
       background: transparent;
-      color: #43cee6; }
+      color: #000080; }
       .button.button-calm.button-outline.active {
-        background-color: #43cee6;
+        background-color: #000080;
         box-shadow: none;
         color: #fff; }
   .button.button-assertive {
@@ -6256,10 +6256,10 @@ a.button {
   border-color: #145fd7; }
 
 .calm, a.calm {
-  color: #43cee6; }
+  color: #000080; }
 
 .calm-bg {
-  background-color: #43cee6; }
+  background-color: #000080; }
 
 .calm-border {
   border-color: #1aacc3; }

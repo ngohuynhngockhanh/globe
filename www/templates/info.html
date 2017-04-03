@@ -1,0 +1,39 @@
+<ion-view view-title="">
+  <ion-header-bar class="bar-calm">
+    <h1 class="title">Information</h1>
+  </ion-header-bar>
+  <ion-content  scroll="true">
+	  	<div class="list">
+
+		  <a class="item item-icon-left" href="#">
+		    <i class="icon ion-earth"></i>
+		    City
+		    <span class="badge badge-assertive">{{city.cityName}}</span>
+
+		  </a>
+		  <a class="item item-icon-left" href="#">
+		    <i class="icon ion-person-stalker"></i>
+		    Population
+		    <span class="badge badge-royal">{{city.population}}</span>
+		    
+		  </a>
+		  <a class="item item-icon-left" href="#">
+		    <i class="icon ion-eye"></i>
+		    Latitude
+		    <span class="badge badge-calm">{{city.latitude}}</span>
+		    
+		  </a>
+
+		  <a class="item item-icon-left" href="#">
+		    <i class="icon ion-eye"></i>
+		    Longitude
+		    <span class="badge badge-balanced">{{city.longitude}}</span>
+		    
+		  </a>
+		</div>
+
+	    <img ng-src="{{city.imageSource}}" style="width:100%">
+	    <img ng-repeat="(key, value) in city.slides" ng-src="{{value}}" style="width:100%;">
+	 
+  </ion-content>
+</ion-view>

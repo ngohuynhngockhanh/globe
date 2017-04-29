@@ -8,12 +8,24 @@ angular.module('starter.controllers', [])
     $scope.city = $stateParams.city
   })
 })
-.controller('MapCtrl', function($scope, $ionicLoading, $rootScope, $timeout, mySocket, $ionicModal, City, $state) {
+.controller('MapCtrl', function($scope, $filter, $ionicLoading, $rootScope, $timeout, mySocket, $ionicModal, City, $state) {
   $scope.mapCreated = function(map) {
     $scope.map = map;
   };
   $scope.searchBox = ""
-  
+  $scope.selectables = []
+  $scope.$on('$ionicView.afterEnter', function() {
+    $scope.selectables = City.all()
+    
+  });
+  $scope.selectLocation = function(city) {
+    console.log(city)
+    $scope.searchBox = city.cityName
+    $timeout(function() {
+      submitGoogle();
+      $scope.createInfoTable($scope.searchBox)
+    }, 300);
+  }
   $scope.speechToText = function() {
     console.log("speech to texx")
     /**/
@@ -69,7 +81,7 @@ angular.module('starter.controllers', [])
   $rootScope.$on("moveToPos", function(e, pos) {
     console.log("listen to pos", pos)
     var json = pos 
-    json.speed = 37
+    json.speed = 52
     /*mySocket.emit("SPEED", {
       "speed": 35
     })*/

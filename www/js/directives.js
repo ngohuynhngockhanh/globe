@@ -296,9 +296,14 @@ angular.module('starter.directives', [])
               title: place.name,
               position: place.geometry.location
             }));
+            console.log(place.geometry.location.lat(), place.geometry.location.lng())
+            var lat = convert(place.geometry.location.lat(), 90, -90, 2, 182)
+            var long = convert(place.geometry.location.lng(), -180, 180, 71, -27)
+            if (long < 0)
+              long += 99
             var pos = {
-              lat: place.geometry.viewport.f.b,
-              long: place.geometry.viewport.b.b
+              lat: lat,
+              long: long
 
             }
             //console.log(place.geometry)
@@ -334,3 +339,7 @@ angular.module('starter.directives', [])
     }
   }
 });
+function convert(x, in_min, in_max, out_min, out_max)
+{
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}

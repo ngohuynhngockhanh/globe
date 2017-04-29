@@ -8,9 +8,6 @@ map {
 .scroll {
   height: 100%;
 }
-.modal-backdrop.active {
-    background-color: white !important;
-}
 .badao {
 	height: 50px !important;
 }
@@ -52,4 +49,7 @@ map {
     transition: .3s fade-in-out;
     -webkit-transition-property: -webkit-transform, box-shadow;
     transition-property: transform, box-shadow;
+}
+.button-fab.fab-left {
+    left: 24px;
 }

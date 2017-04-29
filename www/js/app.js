@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives','btford.socket-io'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives','btford.socket-io', 'ionic-modal-select'])
 
 .factory('mySocket', function (socketFactory) {
 	var myIoSocket = io.connect('http://ourshark.co:8087/webapp');	//Tên namespace webapp
@@ -9,7 +9,30 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives',
 	return mySocket;
 	
 /////////////////////// Những dòng code ở trên phần này là phần cài đặt, các bạn hãy đọc thêm về angularjs để hiểu, cái này không nhảy cóc được nha!
-}).run(function($ionicPlatform, $ionicPopup, $rootScope, $timeout) {
+})
+.filter('toArray', function() {
+        return function(obj, addKey) {
+            if (!angular.isObject(obj)) return obj;
+            if (addKey === false) {
+                return Object.keys(obj).map(function(key) {
+                    return obj[key];
+                });
+            } else {
+                return Object.keys(obj).map(function(key) {
+                    var value = obj[key];
+                    return angular.isObject(value) ?
+                        Object.defineProperty(value, '$key', {
+                            enumerable: false,
+                            value: key
+                        }) : {
+                            $key: key,
+                            $value: value
+                        };
+                });
+            }
+        };
+    })
+.run(function($ionicPlatform, $ionicPopup, $rootScope, $timeout) {
 	var recognitionAlert = undefined
     var timeoutAlert = undefined
     var recognitionAlertDisplay = function(message, title) {

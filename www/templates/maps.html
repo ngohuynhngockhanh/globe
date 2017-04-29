@@ -8,6 +8,12 @@
       <button class="button button-fab button-calm" ng-click="speechToText()">
         <i class="icon ion-android-microphone"></i>  
       </button>
+      <button class="button button-fab fab-left button-calm" on-select="selectLocation(newValue)" modal-select="" ng-model="someModel" options="selectables" has-search="true" modal-title="Select a city">
+        <i class="icon ion-navigate"></i>  
+        <div class="option">
+          {{option.cityName}}
+        </div>
+      </button>
       <map on-create="mapCreated(map)"></map>
     </ion-content>
 

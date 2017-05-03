@@ -1,7 +1,7 @@
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives','btford.socket-io', 'ionic-modal-select'])
 
 .factory('mySocket', function (socketFactory) {
-	var myIoSocket = io.connect('http://ourshark.co:8087/webapp');	//Tên namespace webapp
+	var myIoSocket = io.connect('http://ourshark.mysmarthome.vn:8087/webapp');	//Tên namespace webapp
 
 	mySocket = socketFactory({
 		ioSocket: myIoSocket

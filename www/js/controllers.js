@@ -81,7 +81,7 @@ angular.module('starter.controllers', [])
   $rootScope.$on("moveToPos", function(e, pos) {
     console.log("listen to pos", pos)
     var json = pos 
-    json.speed = 52
+    json.speed = 47
     /*mySocket.emit("SPEED", {
       "speed": 35
     })*/
